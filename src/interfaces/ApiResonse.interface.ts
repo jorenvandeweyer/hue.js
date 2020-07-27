@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 interface BridgeResponse {
     id: string,
     internalipaddress: string,
@@ -146,7 +147,7 @@ interface ScheduleResponse {
     command: {
         address: string,
         method: string,
-        body: string
+        body: any
     },
     time: string,
     localtime: string,
@@ -172,8 +173,8 @@ interface SceneResponse {
         data: string
     },
     picture: string,
-    image: string, // UUID, not sure how to type this.
-    lastupdated: string, // Time, is string the correct type for this?
+    image: string,
+    lastupdated: string,
     version: number
 }
 
