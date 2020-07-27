@@ -17,7 +17,7 @@
     "pretest": "npm run start",
     "test": "jest ./dist"
   },
-  "author": "",
+  "author": "Joren Vandeweyer",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
