@@ -42,7 +42,7 @@ test('False authentication', async () => {
 
   const bridge = await Bridge.one(HUE_BRIDGE_ID);
 
-  bridge?.authenticate('fake');
+  await bridge?.authenticate('fake');
 
   try {
     await bridge?.request({

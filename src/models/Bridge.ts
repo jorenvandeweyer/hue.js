@@ -30,8 +30,9 @@ class Bridge {
             return response;
         } catch (e) {
             delete this.username;
-            return null;
         }
+
+        throw 'Authentication failed'
     }
 
     async request<T>(config: AxiosRequestConfig) : Promise<T> {
@@ -70,10 +71,16 @@ class Bridge {
         }
     }
 
-    static async one(id: string) : Promise<Bridge|undefined> {
+    static async one(id: string) : Promise<Bridge> {
         const bridges = await this.all();
 
-        return bridges.find(bridge => bridge.id === id);
+        const bridge = bridges.find(bridge => bridge.id === id);
+
+        if (!bridge) {
+            throw 'bridge not found'
+        }
+
+        return bridge
     }
 }
 

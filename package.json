@@ -2,7 +2,7 @@
   "name": "hue.js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "start": "npm run clean && tsc",
     "watch": "tsc -w",
