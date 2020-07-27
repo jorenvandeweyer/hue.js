@@ -9,19 +9,17 @@ class App extends events.EventEmitter {
         super()
         this.id = id;
         this.user = user;
-
         this.connect()
     }
 
     async connect() : Promise<void> {
         try {
             const bridge = await this._getBridge();
-
             await bridge.authenticate(this.user)
 
             this.emit('ready', bridge)
         } catch (e) {
-            this.emit('error')
+            this.emit('error', e)
         }
     }
 
@@ -32,14 +30,12 @@ class App extends events.EventEmitter {
 
         const bridges = await Bridge.all();
 
-        const bridge = bridges.find(bridge => bridge.id === this.id);
-
-        if (!bridge) {
+        if (!bridges.length) {
             throw 'bridge not found'
         }
 
-        return bridge
+        return bridges[0]
     }
 }
 
-export default { Bridge, App }
+export { Bridge, App }

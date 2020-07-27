@@ -2,7 +2,13 @@
   "name": "hue.js",
   "version": "0.0.1",
   "description": "An easy to use wrapper for the Hue API in NodeJS",
-  "keywords": ["hue", "hue-api", "javascript", "nodejs", "wrapper"],
+  "keywords": [
+    "hue",
+    "hue-api",
+    "javascript",
+    "nodejs",
+    "wrapper"
+  ],
   "main": "dist/src/index.js",
   "scripts": {
     "start": "npm run clean && tsc",
