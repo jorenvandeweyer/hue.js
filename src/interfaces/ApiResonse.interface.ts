@@ -140,6 +140,60 @@ interface ConfigResponse {
     }
 }
 
+interface ScheduleResponse {
+    name: string,
+    description: string,
+    command: {
+        address: string,
+        method: string,
+        body: string
+    },
+    time: string,
+    localtime: string,
+    starttime: string,
+    status: string,
+    autodelete: boolean
+}
+
+interface ScheduleResponses {
+    [key: string]: ScheduleResponse
+}
+
+interface SceneResponse {
+    name: string,
+    type: string,
+    group: string,
+    lights: Array<number>,
+    owner: string,
+    recycle: boolean,
+    locked: boolean,
+    appdata: {
+        version: number,
+        data: string
+    },
+    picture: string,
+    image: string, // UUID, not sure how to type this.
+    lastupdated: string, // Time, is string the correct type for this?
+    version: number
+}
+
+interface ScenesResponse {
+    [key: string]: SceneResponse
+}
+
+interface ResourcelinkResponse {
+    name: string,
+    description: string,
+    type: string,
+    class: number,
+    owner: string,
+    links: Array<string>
+}
+
+interface ResourcelinksResponse {
+    [key: string]: ResourcelinkResponse
+}
+
 interface apiError {
     type: number;
     description: string;
