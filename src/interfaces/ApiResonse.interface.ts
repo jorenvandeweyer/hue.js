@@ -5,10 +5,6 @@ interface BridgeResponse {
     name?: string
 }
 
-interface BridgesResponse {
-    [index: number]: BridgeResponse
-}
-
 interface LightResponse {
     state: {
         on: boolean,
@@ -68,34 +64,6 @@ interface LightResponse {
 
 interface LightsResponse {
     [key: string]: LightResponse
-}
-
-interface GroupResponse {
-    name: string,
-    lights: Array<string>,
-    sensors: Array<string>,
-    type: string,
-    state: {
-        all_on: boolean,
-        any_on: boolean
-    },
-    recycle: boolean,
-    class: string,
-    action: {
-        on: boolean,
-        bri: number,
-        hue: number,
-        sat: number,
-        effect: string,
-        xy: [number, number],
-        ct: number,
-        alert: string,
-        colormode: string
-    }
-}
-
-interface GroupsResponse {
-    [key: string]: GroupResponse
 }
 
 interface ConfigResponse {
@@ -171,3 +139,9 @@ interface ConfigResponse {
         }
     }
 }
+
+interface apiError {
+    type: number;
+    description: string;
+}
+

@@ -1,6 +1,5 @@
-import Axios from "axios";
-
-interface Light extends LightResponse {};
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface Light extends LightResponse {}
 
 class Light {
     constructor(response: LightResponse) {
