@@ -12,6 +12,13 @@
   - [bridge.Group](#bridgegroup)
   - [bridge.authenticate(username)](#bridgeauthenticateusername)
 - [Class: Group](#class-group)
+  - [Group.bridge](#groupbridge)
+  - [Group.all()](#groupall)
+  - [Group.one(id)](#grouponeid)
+  - [group.bridge](#groupbridge-1)
+  - [group.off()](#groupoff)
+  - [group.on()](#groupon)
+  - [group.toggle()](#grouptoggle)
 
 ## Creating a user for a bridge
 [Hue documentation](https://developers.meethue.com/develop/get-started-2/)
@@ -42,16 +49,17 @@ Manually reconnect to bridge.
 The bridge model creates an interface to the groups, lights and other things connected to the pyshical Hue bridge.
 
 ### Bridge.all()
-- {Group[]} returns array of unauthenticated groups
+- {Promise\<Bridge[]\>} returns array of unauthenticated bridges
 
 ### Bridge.one(id)
-- {Group} returns unauthenticated group
+- {Promise\<Bridge\>} returns unauthenticated bridge
 
 ### bridge.Group
--  {Group}
+-  {Group} class to interact with Hue groups
 
 ### bridge.authenticate(username)
 - `username` {String} The username to authenticate to the bridge
+- {Promise} returns promise
 
 The bridge will emit a `ready` event when successfully connected.
 
@@ -66,10 +74,10 @@ The group model created from an API response with some methods to control the gr
 - {Promise\<Group[]\>} returns a promise that resolves to an array of groups
 
 ### Group.one(id)
- - {Promise\<Group\>} returns a promise that resolve to a group
+ - {Promise\<Group\>} returns a promise that resolves to a group
 
 ### group.bridge
-- {Bridge} return the bridge that created the group instance
+- {Bridge} returns the bridge that created the group instance
 
 ### group.off()
 - {Promise}
