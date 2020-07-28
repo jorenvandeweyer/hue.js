@@ -56,7 +56,10 @@ const { Bridge } = require('hue.js');
 const { HUE_BRIDGE, HUE_USER } = process.env;
 
 Bridge.one(HUE_BRIDGE).then(bridge => {
-    bridge.on();
+    const groups = await bridge.Group.all();
+    const group = groups[0];
+
+    await group.on();
 });
 ```
 
@@ -70,7 +73,11 @@ const { HUE_BRIDGE, HUE_USER } = process.env;
 
 Bridge.all().then(bridges => {
     const bridge = bridges[0];
-    bridge.off();
+
+    const groups = await bridge.Group.all();
+    const group = groups[0];
+
+    await group.off();
 });
 ```
 ## Documentation
