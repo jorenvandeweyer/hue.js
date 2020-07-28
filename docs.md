@@ -49,10 +49,10 @@ Manually reconnect to bridge.
 The bridge model creates an interface to the groups, lights and other things connected to the pyshical Hue bridge.
 
 ### Bridge.all()
-- {Promise\<Bridge[]\>} returns array of unauthenticated bridges
+- {Promise\<Bridge[]\>} returns a promise that resolves to an array of unauthenticated bridges
 
 ### Bridge.one(id)
-- {Promise\<Bridge\>} returns unauthenticated bridge
+- {Promise\<Bridge\>} returns a promise that resolves to an unauthenticated bridge
 
 ### bridge.Group
 -  {Group} class to interact with Hue groups
