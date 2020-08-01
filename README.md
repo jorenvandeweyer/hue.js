@@ -8,7 +8,7 @@ The package can be used in both javascript and typescript.
 - [Example](#usage-examples)
 - [Documentation](#documentation)
 
-## Getting started
+## Getting Started
 
 At the moment the package is not published on npm yet.
 
@@ -31,7 +31,7 @@ const { App } = require('hue.js');
 
 const { HUE_BRIDGE, HUE_USER } = process.env;
 
-const hue = new App(HUE_BIRDGE, HUE_USER);
+const hue = new App(HUE_BRIDGE, HUE_USER);
 
 hue.on('ready', async (bridge) => {
     const groups = await bridge.Group.all();
@@ -82,4 +82,3 @@ Bridge.all().then(bridges => {
 ```
 ## Documentation
 Detailed documentation in [`docs.md`](./docs.md).
-
