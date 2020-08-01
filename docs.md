@@ -34,7 +34,7 @@ A class that extends eventemitter to alert about the state of your bridge. To cr
 ### Event: 'ready'
  - `bridge` {Bridge} an authenticated bridge
 
-This events emits an already authenticated bridge, which is ready to use.
+This event emits an already authenticated bridge, which is ready to use.
 
 
 ### Event: 'error'
