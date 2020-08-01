@@ -1,6 +1,6 @@
 {
   "name": "hue-wrapper",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "An easy to use wrapper for the Hue API in NodeJS",
   "keywords": [
     "hue",
@@ -37,7 +37,7 @@
     "axios": "^0.19.2"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/jorenvandeweyer/hue.js"
+    "type": "git",
+    "url": "https://github.com/jorenvandeweyer/hue.js"
   }
 }

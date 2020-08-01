@@ -15,7 +15,7 @@ npm i hue-wrapper
 ```
 
 ```js
-const { App, Bridge } = require('hue.js');
+const { App, Bridge } = require('hue-wrapper');
 ```
 ## Usage Examples
 
@@ -23,7 +23,7 @@ const { App, Bridge } = require('hue.js');
 Connecting to a bridge with the `App` class
 
 ```js
-const { App } = require('hue.js');
+const { App } = require('hue-wrapper');
 
 const { HUE_BRIDGE, HUE_USER } = process.env;
 
@@ -47,7 +47,7 @@ hue.on('error', (msg) => {
 Connecting directly to a bridge
 
 ```js
-const { Bridge } = require('hue.js');
+const { Bridge } = require('hue-wrapper');
 
 const { HUE_BRIDGE, HUE_USER } = process.env;
 
@@ -63,7 +63,7 @@ Bridge.one(HUE_BRIDGE).then(bridge => {
 Connecting to the first (and mostly only bridge found)
 
 ```js
-const { Bridge } = require('hue.js');
+const { Bridge } = require('hue-wrapper');
 
 const { HUE_BRIDGE, HUE_USER } = process.env;
 

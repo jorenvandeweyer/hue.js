@@ -1,4 +1,4 @@
-# Hue.js Documentation
+# Hue Documentation
 
 ## TOC
 - [Class: App](#class-app)
