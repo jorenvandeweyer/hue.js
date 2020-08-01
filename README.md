@@ -1,8 +1,6 @@
 # Hue.js
 An easy to use wrapper from the [Hue API](https://developers.meethue.com/develop/hue-api/) in typescript.
 
-The package can be used in both javascript and typescript.
-
 ## Table Of Contents
 - [Getting Started](#getting-started)
 - [Example](#usage-examples)
@@ -10,12 +8,10 @@ The package can be used in both javascript and typescript.
 
 ## Getting Started
 
-At the moment the package is not published on npm yet.
-
 Installing the package can be done with the following command:
 
 ```
-npm i github:jorenvandeweyer/hue.js
+npm i hue-wrapper
 ```
 
 ```js

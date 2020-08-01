@@ -1,5 +1,5 @@
 {
-  "name": "hue.js",
+  "name": "hue-wrapper",
   "version": "0.0.1",
   "description": "An easy to use wrapper for the Hue API in NodeJS",
   "keywords": [
@@ -10,11 +10,14 @@
     "wrapper"
   ],
   "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
-    "start": "npm run clean && tsc",
-    "watch": "tsc -w",
     "clean": "rm -rf ./dist",
-    "pretest": "npm run start",
+    "watch": "tsc -w",
+    "build": "npm run clean && tsc",
+    "start": "npm run build",
+    "pretest": "npm run build",
+    "prepublish": "npm run build",
     "test": "jest ./dist"
   },
   "author": "Joren Vandeweyer",
