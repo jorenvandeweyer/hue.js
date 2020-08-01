@@ -32,7 +32,7 @@ class Bridge {
             delete this.username;
         }
 
-        throw 'Authentication failed'
+        throw 'Authentication failed';
     }
 
     async request<T>(config: AxiosRequestConfig) : Promise<T> {
@@ -77,10 +77,10 @@ class Bridge {
         const bridge = bridges.find(bridge => bridge.id === id);
 
         if (!bridge) {
-            throw 'bridge not found'
+            throw 'bridge not found';
         }
 
-        return bridge
+        return bridge;
     }
 }
 

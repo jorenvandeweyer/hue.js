@@ -1,4 +1,4 @@
-import Bridge from "./Bridge";
+import Bridge from './Bridge';
 
 interface Group extends GroupResponse {
     bridge?: Bridge
@@ -23,7 +23,7 @@ class Group {
     }
 
     static async all() : Promise<Array<Group>> {
-        const groups = []
+        const groups = [];
 
         try {
             const response = await this.bridge.request<GroupsResponse>({
@@ -37,7 +37,7 @@ class Group {
             return groups;
         } catch (e) {
             return groups;
-         }
+        }
     }
 
     static async one(id: string) : Promise<Group> {

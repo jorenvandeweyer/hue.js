@@ -1,6 +1,6 @@
-import Bridge from "../src/models/Bridge";
-import Group from '../src/models/Group'
-import dotenv from 'dotenv'
+import Bridge from '../src/models/Bridge';
+import Group from '../src/models/Group';
+import dotenv from 'dotenv';
 
 dotenv.config();
 
