@@ -15,19 +15,19 @@ npm i hue-wrapper
 ```
 
 ```js
-const { App, Bridge } = require('hue-wrapper');
+const { Hue, Bridge } = require('hue-wrapper');
 ```
 ## Usage Examples
 
 ### Example 1
-Connecting to a bridge with the `App` class
+Connecting to a bridge with the `Hue` class
 
 ```js
-const { App } = require('hue-wrapper');
+const { Hue } = require('hue-wrapper');
 
 const { HUE_BRIDGE, HUE_USER } = process.env;
 
-const hue = new App(HUE_BRIDGE, HUE_USER);
+const hue = new Hue(HUE_BRIDGE, HUE_USER);
 
 hue.on('ready', async (bridge) => {
     const groups = await bridge.Group.all();

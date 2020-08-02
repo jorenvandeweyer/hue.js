@@ -1,13 +1,16 @@
 {
   "name": "hue-wrapper",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "An easy to use wrapper for the Hue API in NodeJS",
   "keywords": [
     "hue",
     "hue-api",
     "javascript",
     "nodejs",
-    "wrapper"
+    "wrapper",
+    "lights",
+    "smart-home",
+    "hue-bridge"
   ],
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",

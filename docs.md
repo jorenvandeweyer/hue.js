@@ -1,11 +1,11 @@
 # Hue Documentation
 
 ## TOC
-- [Class: App](#class-app)
-  - [new App(bridgeId, user)](#new-appbridgeid-user)
+- [Class: Hue](#class-hue)
+  - [new Hue(bridgeId, user)](#new-huebridgeid-user)
   - [Event: 'ready'](#event-ready)
   - [Event: 'error'](#event-error)
-  - [app.connect()](#appconnect)
+  - [hue.connect()](#hueconnect)
 - [Class: Bridge](#class-bridge)
   - [Bridge.all()](#bridgeall)
   - [Bridge.one(id)](#bridgeoneid)
@@ -23,11 +23,11 @@
 ## Creating a user for a bridge
 [Hue documentation](https://developers.meethue.com/develop/get-started-2/)
 
-## Class: App
+## Class: Hue
 
 A class that extends eventemitter to alert about the state of your bridge. To create a user
 
-### new App(bridgeId, user)
+### new Hue(bridgeId, user)
 - `bridgeId` {String|null} The id of the bridge you want to connect to. It is possible to not specify the bridgeId (but not recommended).
 - `user` {String} A user with access to this bridge.
 
@@ -40,10 +40,10 @@ This event emits an already authenticated bridge, which is ready to use.
 ### Event: 'error'
 - `error` {any}
 
-Emitted when the app could not connect to the bridge.
+Emitted when the instance could not connect to the bridge.
 
-### app.connect()
-Manually reconnect to bridge.
+### hue.connect()
+Manually reconnect to bridge, with the provided credentials.
 
 ## Class: Bridge
 The bridge model creates an interface to the groups, lights and other things connected to the pyshical Hue bridge.

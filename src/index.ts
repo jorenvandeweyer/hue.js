@@ -1,7 +1,7 @@
 import Bridge from './models/Bridge';
 import events from 'events';
 
-class App extends events.EventEmitter {
+class Hue extends events.EventEmitter {
     private id: string;
     private user: string;
 
@@ -40,4 +40,4 @@ class App extends events.EventEmitter {
     }
 }
 
-export { Bridge, App };
+export { Bridge, Hue };
