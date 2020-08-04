@@ -8,9 +8,13 @@ interface Group extends GroupResponse {
 class Group {
     static bridge: Bridge;
 
+    private dim_bri_incr: number;
+
     constructor(id: string, bridge: Bridge, response: GroupResponse) {
         this.id = id;
         this.bridge = bridge;
+        this.dim_bri_incr = 1;
+
         Object.assign(this, response);
     }
 
@@ -121,6 +125,22 @@ class Group {
 
         if (this.state.any_on) await this.off();
         else await this.on();
+    }
+
+    async dim() : Promise<void> {
+        this.dim_bri_incr *= -1;
+
+        await this.setState({
+            bri_inc: this.dim_bri_incr * 254,
+            transitiontime: 50,
+        });
+
+    }
+
+    async freeze() : Promise<void> {
+        await this.setState({
+            bri_inc: 0,
+        });
     }
 
     async remove() : Promise<void> {
