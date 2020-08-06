@@ -11,11 +11,11 @@ An easy to use wrapper from the [Hue API](https://developers.meethue.com/develop
 Installing the package can be done with the following command:
 
 ```
-npm i hue-wrapper
+npm i hue
 ```
 
 ```js
-const { Hue, Bridge } = require('hue-wrapper');
+const { Hue, Bridge } = require('hue');
 ```
 ## Usage Examples
 
@@ -23,7 +23,7 @@ const { Hue, Bridge } = require('hue-wrapper');
 Connecting to a bridge with the `Hue` class
 
 ```js
-const { Hue } = require('hue-wrapper');
+const { Hue } = require('hue');
 
 const { HUE_BRIDGE, HUE_USER } = process.env;
 
@@ -47,7 +47,7 @@ hue.on('error', (msg) => {
 Connecting directly to a bridge
 
 ```js
-const { Bridge } = require('hue-wrapper');
+const { Bridge } = require('hue');
 
 const { HUE_BRIDGE, HUE_USER } = process.env;
 
@@ -63,7 +63,7 @@ Bridge.one(HUE_BRIDGE).then(bridge => {
 Connecting to the first (and mostly only bridge found)
 
 ```js
-const { Bridge } = require('hue-wrapper');
+const { Bridge } = require('hue');
 
 const { HUE_BRIDGE, HUE_USER } = process.env;
 

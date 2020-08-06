@@ -1,6 +1,6 @@
 {
-  "name": "hue-wrapper",
-  "version": "0.1.1",
+  "name": "hue",
+  "version": "0.1.2",
   "description": "An easy to use wrapper for the Hue API in NodeJS",
   "keywords": [
     "hue",
