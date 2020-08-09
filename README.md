@@ -70,10 +70,10 @@ const { HUE_BRIDGE, HUE_USER } = process.env;
 Bridge.all().then(bridges => {
     const bridge = bridges[0];
 
-    const groups = await bridge.Group.all();
-    const group = groups[0];
+    const lights = await bridge.Light.all();
+    const light = lights[0];
 
-    await group.off();
+    await light.off();
 });
 ```
 ## Documentation
