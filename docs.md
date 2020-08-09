@@ -88,10 +88,10 @@ The group model created from an API response with some methods to control the gr
 - {Bridge} returns the bridge that provided the group class
 
 ### Group.all()
-- {Promise\<Group[]\>} returns a promise that resolves to an array of groups
+- {Promise\<[Group](#class-group)[]\>} returns a promise that resolves to an array of groups
 
 ### Group.one(id)
- - {Promise\<Group\>} returns a promise that resolves to a group
+ - {Promise\<[Group](#class-group)\>} returns a promise that resolves to a group
 
 ### group.bridge
 - {Bridge} returns the bridge that created the group instance
@@ -137,16 +137,16 @@ The light model created from an API response with some methods to control the li
 - {Bridge} returns the bridge that provided the light class
 
 ### Light.all()
-- {Promise\<Light[]\>} returns a promise that resolves to an array of lights
+- {Promise\<[Light](#class-light)[]\>} returns a promise that resolves to an array of lights
 
 ### Light.allAsGroup()
-- {Promise \<Group\>} returns a promise that resolved to a group containing all lights connected to this bridge
+- {Promise \<[Group](#class-group)\>} returns a promise that resolved to a group containing all lights connected to this bridge
 
 ### Light.one(id)
- - {Promise\<Light\>} returns a promise that resolves to a light
+ - {Promise\<[Light](#class-light)\>} returns a promise that resolves to a light
 
 ### Light.new()
-- {Promise\<Light[]\>} returns a promise that resolves to an array of new lights.
+- {Promise\<[Light](#class-light)[]\>} returns a promise that resolves to an array of new lights.
 
 ### Light.search()
 - {Promise}
