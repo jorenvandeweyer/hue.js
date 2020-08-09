@@ -29,19 +29,15 @@ class Group {
     static async all() : Promise<Array<Group>> {
         const groups = [];
 
-        try {
-            const response = await this.bridge.request<GroupsResponse>({
-                url: '/groups'
-            });
+        const response = await this.bridge.request<GroupsResponse>({
+            url: '/groups'
+        });
 
-            for (const key in response) {
-                groups.push(new Group(key, this.bridge, response[key]));
-            }
-
-            return groups;
-        } catch (e) {
-            return groups;
+        for (const key in response) {
+            groups.push(new Group(key, this.bridge, response[key]));
         }
+
+        return groups;
     }
 
     static async one(id: string) : Promise<Group> {
@@ -98,7 +94,7 @@ class Group {
         });
     }
 
-    async setState(state: GroupStateRequest) : Promise<void> {
+    async setState(state: GroupState) : Promise<void> {
         await this.bridge?.request({
             url: `/groups/${this.id}/action`,
             method: 'PUT',
@@ -107,6 +103,17 @@ class Group {
 
         await this.update();
     }
+
+    async remove() : Promise<void> {
+        await this.bridge?.request({
+            url: `/groups/${this.id}`,
+            method: 'DELETE',
+        });
+    }
+
+    /**
+     * Extra functions to extend functionality
+     */
 
     async on() : Promise<void> {
         await this.setState({
@@ -134,7 +141,6 @@ class Group {
             bri_inc: this.dim_bri_incr * 254,
             transitiontime: 50,
         });
-
     }
 
     async freeze() : Promise<void> {
@@ -143,12 +149,6 @@ class Group {
         });
     }
 
-    async remove() : Promise<void> {
-        await this.bridge?.request({
-            url: `/groups/${this.id}`,
-            method: 'DELETE',
-        });
-    }
 }
 
 export default Group;

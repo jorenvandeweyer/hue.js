@@ -1,29 +1,29 @@
 interface GroupResponse {
-    name: string,
-    lights: Array<string>,
-    sensors: Array<string>,
-    type: string,
+    name: string;
+    lights: Array<string>;
+    sensors: Array<string>;
+    type: string;
     state: {
-        all_on: boolean,
-        any_on: boolean
-    },
-    recycle: boolean,
-    class: string,
+        all_on: boolean;
+        any_on: boolean;
+    };
+    recycle: boolean;
+    class: string;
     action: {
-        on: boolean,
-        bri: number,
-        hue: number,
-        sat: number,
-        effect: string,
-        xy: [number, number],
-        ct: number,
-        alert: string,
-        colormode: string
+        on: boolean;
+        bri: number;
+        hue: number;
+        sat: number;
+        effect: string;
+        xy: [number, number];
+        ct: number;
+        alert: string;
+        colormode: string;
     }
 }
 
 interface GroupsResponse {
-    [key: string]: GroupResponse
+    [key: string]: GroupResponse;
 }
 
 interface GroupCreateRequest {
@@ -35,24 +35,10 @@ interface GroupCreateRequest {
 
 interface GroupCreateResponse {
     success: {
-        id: string,
+        id: string;
     };
 }
 
-interface GroupStateRequest {
-    on?: boolean;
-    bri?: number;
-    hue?: number;
-    sat?: number;
-    xy?: [number, number];
-    ct?: number;
-    alert?: string;
-    effect?: string;
-    transitiontime?: number;
-    bri_inc?: number;
-    sat_inc?: number;
-    hue_inc?: number;
-    ct_inc?: number;
-    xy_inc?: number;
+interface GroupState extends LightState {
     scene?: string;
 }

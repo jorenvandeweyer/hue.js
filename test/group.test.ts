@@ -7,11 +7,11 @@ dotenv.config();
 let bridge : Bridge|undefined;
 
 async function getTestGroup() : Promise<Group> {
-    const { HUE_GROUP } = process.env;
-    console.log(HUE_GROUP);
-    if (!HUE_GROUP) throw 'Test group not found';
+    const { HUE_TEST_GROUP } = process.env;
 
-    const group = bridge?.Group.one(HUE_GROUP);
+    if (!HUE_TEST_GROUP) throw 'Test group id not found';
+
+    const group = bridge?.Group.one(HUE_TEST_GROUP);
     if (!group) throw 'Test group not found';
 
     return group;
@@ -28,10 +28,6 @@ beforeAll(async () => {
 
 test('Get all groups', async () => {
     const groups = await bridge?.Group.all();
-
-    if (!groups) {
-        throw 'Getting all groups failed';
-    }
 
     expect(groups).toBeDefined();
 });

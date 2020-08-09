@@ -2,6 +2,7 @@ import axios, { AxiosRequestConfig } from 'axios';
 // import https from 'https';
 import parseErrors from '../utils/parseErrors';
 import GroupModel from './Group';
+import LightModel from './Light';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Bridge extends BridgeResponse {}
@@ -10,13 +11,16 @@ class Bridge {
     private username?: string;
 
     public Group: typeof GroupModel;
+    public Light: typeof LightModel;
 
     constructor(response: BridgeResponse,) {
         Object.assign(this, response);
 
         GroupModel.bridge = this;
+        LightModel.bridge = this;
 
         this.Group = GroupModel;
+        this.Light = LightModel;
     }
 
     async authenticate(username: string) : Promise<ConfigResponse|null> {
