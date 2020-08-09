@@ -35,6 +35,12 @@ test('Get all groups', async () => {
 test('Get group', async () => {
     const group = await getTestGroup();
 
+    expect(group).toBeDefined();
+});
+
+test('Toggle group', async () => {
+    const group = await getTestGroup();
+
     const firstState = group.state.any_on;
 
     await group.toggle();
