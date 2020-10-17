@@ -42,7 +42,7 @@
 
 ## Class: Hue
 
-A class that extends eventemitter to alert about the state of your bridge. To create a user
+A class that extends eventemitter to alert about the state of your bridge.
 
 ### new Hue(bridgeId, user)
 - `bridgeId` {String|null} The id of the bridge you want to connect to. It is possible to not specify the bridgeId (but not recommended).
