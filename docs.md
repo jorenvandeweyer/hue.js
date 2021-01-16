@@ -93,6 +93,11 @@ The group model created from an API response with some methods to control the gr
 ### Group.one(id)
  - {Promise\<[Group](#class-group)\>} returns a promise that resolves to a group
 
+### Group.create(optoins)
+- {Promise<Group>} returns the created group
+
+Create a group
+
 ### group.bridge
 - {Bridge} returns the bridge that created the group instance
 
@@ -129,6 +134,31 @@ This function will increase or decrease the brightness of the group. The first t
 
 This function will stop the brightness increase/decrease triggered by the [group.dim()](#groupdim) function.
 
+
+### group.setName(value: string)
+- {Promise}
+
+Change the name of the group
+
+### group.setClass(value: string)
+- {Promise}
+
+Change the class of the group
+
+### group.setLights(lights: Array<string>)
+- {Promise}
+
+Change the lights of the group
+
+### group.remove()
+- {Promise}
+
+Remove this group
+
+### group.setState(satte: GroupState)
+- {Promise}
+
+Set state to all lights of group
 
 ## Class: Light
 The light model created from an API response with some methods to control the light
