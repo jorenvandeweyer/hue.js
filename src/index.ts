@@ -20,6 +20,8 @@ class Hue extends events.EventEmitter {
             await bridge.authenticate(this.user);
 
             this.emit('ready', bridge);
+
+            bridge.on('error', (e) => this.emit('error', e));
         } catch (e) {
             this.emit('error', e);
         }

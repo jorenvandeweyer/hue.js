@@ -3,17 +3,20 @@ import axios, { AxiosRequestConfig } from 'axios';
 import parseErrors from '../utils/parseErrors';
 import GroupModel from './Group';
 import LightModel from './Light';
+import events from 'events';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Bridge extends BridgeResponse {}
 
-class Bridge {
+class Bridge extends events.EventEmitter {
     private username?: string;
 
     public Group: typeof GroupModel;
     public Light: typeof LightModel;
 
     constructor(response: BridgeResponse,) {
+        super();
+
         Object.assign(this, response);
 
         GroupModel.bridge = this;
@@ -51,15 +54,22 @@ class Bridge {
             // })
         });
 
-        const response = await instance.request(config);
-        const errors = parseErrors(response.data);
+        try {
+            const response = await instance.request(config);
+            const errors = parseErrors(response.data);
 
-        if (errors) {
-            throw errors;
+            if (errors) {
+                throw errors;
+            }
+
+            return response.data;
+        } catch (e) {
+            const error = new Error('API Call failed');
+
+            this.emit('error', error);
+
+            throw error;
         }
-
-
-        return response.data;
     }
 
     static async all () : Promise<Array<Bridge>> {
