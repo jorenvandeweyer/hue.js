@@ -132,8 +132,8 @@ class Light implements LightResponse {
         else await this.on();
     }
 
-    async dim(direction: -1|1) : Promise<void> {
-        if (direction) {
+    async dim(direction?: -1|1) : Promise<void> {
+        if (typeof direction === 'number') {
             this.dim_bri_incr = direction;
         } else {
             this.dim_bri_incr *= -1;
