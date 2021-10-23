@@ -5,7 +5,7 @@ interface Group extends GroupResponse {
     id: string,
 }
 
-class Group {
+class Group implements GroupResponse {
     static bridge: Bridge;
 
     private dim_bri_incr: number;
