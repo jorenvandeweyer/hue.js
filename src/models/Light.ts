@@ -6,10 +6,10 @@ interface Light extends LightResponse {
     id: string
 }
 
-class Light {
-    static bridge: Bridge
+class Light implements LightResponse {
+    static bridge: Bridge;
 
-    private dim_bri_incr: number
+    private dim_bri_incr: number;
 
     constructor(id: string, bridge: Bridge, response: LightResponse) {
         this.id = id;
@@ -132,8 +132,12 @@ class Light {
         else await this.on();
     }
 
-    async dim() : Promise<void> {
-        this.dim_bri_incr *= -1;
+    async dim(direction: -1|1) : Promise<void> {
+        if (direction) {
+            this.dim_bri_incr = direction;
+        } else {
+            this.dim_bri_incr *= -1;
+        }
 
         await this.setState({
             bri_inc: this.dim_bri_incr * 254,
