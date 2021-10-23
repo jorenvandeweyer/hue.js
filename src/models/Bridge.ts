@@ -55,7 +55,7 @@ class Bridge extends events.EventEmitter {
         });
 
         try {
-            const response = await instance.request(config);
+            const response = await instance.request<T>(config);
             const errors = parseErrors(response.data);
 
             if (errors) {

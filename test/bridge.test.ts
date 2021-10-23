@@ -44,13 +44,13 @@ test('False authentication', async () => {
 
     await bridge?.authenticate('fake');
 
-    // await expect(bridge?.request({url: '/'})).rejects.toThrow();
-    try {
-        await bridge?.request({
-            url: '/'
-        });
-        expect(false).toBeTruthy();
-    } catch(e) {
-        expect(e).toBeDefined();
-    }
+    await expect(bridge?.request({url: '/'})).rejects.toThrow();
+    // try {
+    //     await bridge?.request({
+    //         url: '/'
+    //     });
+    //     expect(false).toBeTruthy();
+    // } catch(e) {
+    //     expect(e).toBeDefined();
+    // }
 });
