@@ -1,3 +1,4 @@
+import { GroupCreateRequest, GroupCreateResponse, GroupResponse, GroupsResponse, GroupState } from '../interfaces/Groups.interface';
 import Bridge from './Bridge';
 
 interface Group extends GroupResponse {

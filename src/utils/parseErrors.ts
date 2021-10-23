@@ -1,3 +1,5 @@
+import { apiError } from '../interfaces/ApiResonse.interface';
+
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types, @typescript-eslint/no-explicit-any
 function parseErrors(response: any) : Array<apiError>|null {
     if (!(response instanceof Array)) {

@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-interface BridgeResponse {
+export interface BridgeResponse {
     id: string,
     internalipaddress: string,
     macaddress?: string,
     name?: string
 }
 
-interface ConfigResponse {
+export interface ConfigResponse {
     name: string,
     zigbeechannel: number,
     bridgeid: string,
@@ -95,7 +95,7 @@ interface ScheduleResponse {
     autodelete: boolean
 }
 
-interface ScheduleResponses {
+export interface ScheduleResponses {
     [key: string]: ScheduleResponse
 }
 
@@ -117,11 +117,11 @@ interface SceneResponse {
     version: number
 }
 
-interface ScenesResponse {
+export interface ScenesResponse {
     [key: string]: SceneResponse
 }
 
-interface ResourcelinkResponse {
+export interface ResourcelinkResponse {
     name: string,
     description: string,
     type: string,
@@ -130,11 +130,11 @@ interface ResourcelinkResponse {
     links: Array<string>
 }
 
-interface ResourcelinksResponse {
+export interface ResourcelinksResponse {
     [key: string]: ResourcelinkResponse
 }
 
-interface apiError {
+export interface apiError {
     type: number;
     description: string;
 }

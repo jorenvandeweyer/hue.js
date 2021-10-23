@@ -1,3 +1,4 @@
+import { LightResponse, LightsResponse, LightState, NewLightsResponse } from '../interfaces/Lights.interface';
 import Bridge from './Bridge';
 import Group from './Group';
 
