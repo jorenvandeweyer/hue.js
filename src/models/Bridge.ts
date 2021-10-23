@@ -88,7 +88,7 @@ class Bridge extends events.EventEmitter {
     static async one(id: string) : Promise<Bridge> {
         const bridges = await this.all();
 
-        const bridge = bridges.find(bridge => bridge.id === id);
+        const bridge = bridges.find(bridge => bridge.id?.toLowerCase() === id?.toLowerCase());
 
         if (!bridge) {
             throw 'bridge not found';
