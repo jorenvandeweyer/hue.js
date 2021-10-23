@@ -4,6 +4,7 @@ import parseErrors from '../utils/parseErrors';
 import GroupModel from './Group';
 import LightModel from './Light';
 import events from 'events';
+import { BridgeResponse, ConfigResponse } from '../interfaces/ApiResonse.interface';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Bridge extends BridgeResponse {}

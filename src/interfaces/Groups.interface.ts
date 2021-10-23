@@ -1,4 +1,6 @@
-interface GroupResponse {
+import { LightState } from './Lights.interface';
+
+export interface GroupResponse {
     name: string;
     lights: Array<string>;
     sensors: Array<string>;
@@ -22,23 +24,23 @@ interface GroupResponse {
     }
 }
 
-interface GroupsResponse {
+export interface GroupsResponse {
     [key: string]: GroupResponse;
 }
 
-interface GroupCreateRequest {
+export interface GroupCreateRequest {
     name?: string;
     type?: string;
     class?: string;
     lights: Array<string>;
 }
 
-interface GroupCreateResponse {
+export interface GroupCreateResponse {
     success: {
         id: string;
     };
 }
 
-interface GroupState extends LightState {
+export interface GroupState extends LightState {
     scene?: string;
 }

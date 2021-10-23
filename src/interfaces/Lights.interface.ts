@@ -1,4 +1,4 @@
-interface LightResponse {
+export interface LightResponse {
     state: {
         on: boolean,
         bri: number,
@@ -55,11 +55,11 @@ interface LightResponse {
     swversion: string
 }
 
-interface LightsResponse {
+export interface LightsResponse {
     [key: string]: LightResponse
 }
 
-type NewLightsResponse = {
+export type NewLightsResponse = {
     [key: string]: {
         name: string;
     }
@@ -67,7 +67,7 @@ type NewLightsResponse = {
     lastscan: string;
 }
 
-interface LightState {
+export interface LightState {
     on?: boolean;
     bri?: number;
     hue?: number;
